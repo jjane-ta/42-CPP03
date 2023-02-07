@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/07 16:43:38 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:20:55 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,12 @@ ClapTrap::ClapTrap (const ClapTrap &claptrap) :
 
 ClapTrap & ClapTrap::operator = (const ClapTrap & claptrap) 
 {
+	std::cout << "ClapTrap " << this->_name << " now is a copy of ClapTrap " << claptrap._name << std::endl;
 	_name = claptrap._name;
 	_hit_points = claptrap._hit_points;
 	_energy_points = claptrap._energy_points;
 	_attack_damage = claptrap._attack_damage;
+	
 	return (*this);
 }
 

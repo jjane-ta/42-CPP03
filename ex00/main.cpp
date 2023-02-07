@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/07 17:07:26 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:21:33 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,12 @@ int	main ( void )
 	main_print_banner("Chek copy operator");
 	{
 		ClapTrap a("A");
-		ClapTrap b  = a;
-	
+		ClapTrap b("B");
+
 		std::cout << std::endl;
-		a.attack("A");
+		a = b;
+		std::cout << std::endl;
+		a.attack("B");
 		std::cout << std::endl;
 	}
 
