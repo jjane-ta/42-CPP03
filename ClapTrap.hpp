@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:53:56 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/06 20:02:53 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:40:02 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ private:
 
 	ClapTrap ( void );
 	
-	static const unsigned int	repair_cost = 1;
-	static const unsigned int	attack_cost = 1;
+//	static const unsigned int	repair_cost = 1;
+//	static const unsigned int	attack_cost = 1;
 	
 	static const unsigned int	hit_max = 10;
 	static const unsigned int	energy_max = 10;
@@ -49,7 +49,7 @@ private:
 
 	
 	static ClapTrap	*bot_list;
-	const std::string	_name;
+	std::string	_name;
 	unsigned int		_hit_points;
 	unsigned int		_energy_points;
 	unsigned int		_attack_damage;

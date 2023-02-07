@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/06 20:17:01 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:43:38 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,60 +72,76 @@ ClapTrap::ClapTrap (const ClapTrap &claptrap) :
 	}
 	bot_list = this;
 	std::cout << "Copy ClapTrap " << this->_name << " say hello!!" << std::endl;
-
-	//istd::cout << "ClapTrap private constructor copy should never caled!!" << std::endl;
 }
 
 
 ClapTrap & ClapTrap::operator = (const ClapTrap & claptrap) 
 {
+	_name = claptrap._name;
 	_hit_points = claptrap._hit_points;
 	_energy_points = claptrap._energy_points;
 	_attack_damage = claptrap._attack_damage;
-
-
-	//std::cout << "ClapTrap private copy operator should never caled!!" << std::endl;
-
 	return (*this);
 }
 
 void	ClapTrap::attack(const std::string & target)
 {
-	// check energy
-	ClapTrap *bot = this->get_ClapTrap_instanceByName(target);
-	if (bot)
+	if (!this->_hit_points || !this->_energy_points)
 	{
-		if (this->_name.compare(target) == 0)
-			std::cout << "ClapTrap " << this->_name << " attacks his namesake"\
-				<< ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+		if (!this->_hit_points)
+			std::cout << "ClapTrap " << this->_name << " can't attack with zero health points.\n";
 		else
-			std::cout << "ClapTrap " << this->_name << " attacks " << target\
-				<< ", causing " << this->_attack_damage << " points of damage!" << std::endl;
-		bot->takeDamage(this->_attack_damage);
+			std::cout << "ClapTrap " << this->_name << " does not have enough energy to attack.\n";
 	}
 	else
 	{
-		if (this->_name.compare(target) == 0)
-			std::cout << "ClapTrap " << this->_name << " prefers not to attack itself." << std::endl;
+		ClapTrap *bot = this->get_ClapTrap_instanceByName(target);
+		if (bot)
+		{
+			this->_energy_points--;
+			if (this->_name.compare(target) == 0)
+				std::cout << "ClapTrap " << this->_name << " attacks his namesake"\
+					<< ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+			else
+				std::cout << "ClapTrap " << this->_name << " attacks " << target\
+					<< ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+			bot->takeDamage(this->_attack_damage);
+		}
 		else
-			std::cout << "Are you kidding me? There are no one named " << target << '.' << std::endl;
+		{
+			if (this->_name.compare(target) == 0)
+				std::cout << "ClapTrap " << this->_name << " prefers not to attack itself." << std::endl;
+			else
+				std::cout << "Are you kidding me? There are no one named " << target << '.' << std::endl;
+		}
 	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	// discount amount to hit, hit >= 0 ever  
+	if (this->_hit_points < amount)
+		this->_hit_points = 0;
+	else
+		this->_hit_points -= amount;
 	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage."\
 		<< " Now has " << this->_hit_points << " of health." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	// check energy
-	
-	//repair amount no more than hit max
+	if (!this->_energy_points)
+		std::cout << "ClapTrap " << this->_name << " can't repaired with zero energy points.\n";
+	else
+	{
+		this->_energy_points--;
+		if (amount > hit_max)
+			this->_hit_points = hit_max;
+		else
+			this->_hit_points = amount;
+		std::cout << "ClapTrap " << this->_name << " repair " << amount << " points of health."\
+			<< " Now has " << this->_hit_points << " of health." << std::endl;
 
-	std::cout << "ClapTrap " << this->_name << " repair " << amount << " points of hit." << std::endl;
+	}
 }
 
 ClapTrap	*ClapTrap::get_ClapTrap_instanceByName(const std::string & name)
@@ -134,8 +150,6 @@ ClapTrap	*ClapTrap::get_ClapTrap_instanceByName(const std::string & name)
 
 	while (bot)
 	{
-	//	std::cout << bot->_name << std::endl;
-
 		if (this != bot && bot->_name.compare(name) == 0)
 			break ;
 		bot = bot->_next;
