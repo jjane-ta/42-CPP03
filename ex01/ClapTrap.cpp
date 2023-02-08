@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/07 19:23:38 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:47:49 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,3 +158,9 @@ ClapTrap	*ClapTrap::get_ClapTrap_instanceByName(const std::string & name)
 	}
 	return (bot);
 }
+
+
+std::string	ClapTrap::get_name( void ) const
+{
+	return (this->_name);
+}	

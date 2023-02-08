@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:53:56 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/07 18:21:42 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:20:39 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap {
 
 public:
 
-	~ClapTrap ( void );
+	virtual ~ClapTrap ( void );
 	ClapTrap (const ClapTrap &claptrap);
 	ClapTrap & operator = (const ClapTrap &claptrap);
 
@@ -34,6 +34,8 @@ public:
 	void	attack(const std::string & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+
+	std::string	get_name( void ) const;	
 
 private:
 
@@ -58,8 +60,6 @@ private:
 
 	ClapTrap	*_next;
 	ClapTrap	*_prev;
-
-
 
 };
 
