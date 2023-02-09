@@ -1,4 +1,4 @@
-# 42-CPP03 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) <img src="https://badgen.net/badge/Platform/macOS/grey?icon=default" /> <img align=right src="https://badgen.net/badge/Grade/pending/black?icon=default" />
+# 42-CPP03 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Developed on Platform MacOS](https://badgen.net/badge/Platform/macOS/grey?icon=default)](#) [![jjane-ta 42 Graded points](https://badgen.net/badge/Grade/pending/black?icon=default)](#)
 
 
 ## Ex00
@@ -20,3 +20,17 @@ ClapTrap class:
     - Is not possible take more health than max_health. 
     
 - Out of Subject : The next and prev attributes are implemented to store all instances of this Class that are created and thus make it possible to find the target by name.
+
+## Ex01
+ScavTrap class: This clas is derived of ClapTrap base class
+  - The constructors call the base class's constructors before updating the class values and printing their own messages.
+  - The functions attack and takeDamage call the function of the base clas.
+  - The function beRepaired override base class function.
+  - New var _isGuard is setted true when ScavTrap::guarGate member function is called.
+ 
+ ClapTrap class: Updated
+  - Now default destructor is virtual.
+  - Now default constructor and some private vars are protected.
+  - Now beRepaired function is virtual.
+  
+  
