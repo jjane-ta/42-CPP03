@@ -6,7 +6,7 @@
 #    By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 12:46:18 by jjane-ta          #+#    #+#              #
-#    Updated: 2023/02/07 18:40:28 by jjane-ta         ###   ########.fr        #
+#    Updated: 2023/02/08 19:02:49 by jjane-ta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 DEP = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-CXX = c++ -std=c++98 -pedantic
+CXX = c++ -pedantic -std=c++98 
 CXXFLAGS = -Wall -Wextra -Werror -MMD -MP
 
 .%.o : %.cpp

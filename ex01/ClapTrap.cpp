@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/08 15:47:49 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:24:21 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ ClapTrap::~ClapTrap ( void )
 
 ClapTrap::ClapTrap ( const std::string & name ) :
 	_name(name),
-	_hit_points(hit_max),
-	_energy_points(energy_max),
-	_attack_damage(damage_clap_trap),
+	_hit_points(ClapTrap::hit_max),
+	_energy_points(ClapTrap::energy_max),
+	_attack_damage(ClapTrap::damage_default),
 	_next(nullptr),
 	_prev(nullptr)
 {
@@ -137,7 +137,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_energy_points--;
 		if (amount > hit_max)
-			this->_hit_points = hit_max;
+			this->_hit_points = ClapTrap::hit_max;
 		else
 			this->_hit_points = amount;
 		std::cout << "ClapTrap " << this->_name << " repair " << amount << " points of health."\
@@ -158,9 +158,3 @@ ClapTrap	*ClapTrap::get_ClapTrap_instanceByName(const std::string & name)
 	}
 	return (bot);
 }
-
-
-std::string	ClapTrap::get_name( void ) const
-{
-	return (this->_name);
-}	

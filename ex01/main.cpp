@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/08 16:23:09 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:31:30 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	main ( void )
 		std::cout << std::endl;
 		a.attack("B");
 		std::cout << std::endl;
+
 	}
-
-
-
 	main_print_banner("A attack itself");
 	{
 		ScavTrap a("A");
@@ -58,7 +56,7 @@ int	main ( void )
 		ScavTrap b("B");
 
 		std::cout << std::endl;
-		a.takeDamage(50);
+		a.takeDamage(150);
 		a.attack("B");
 		std::cout << std::endl;
 	}
@@ -68,7 +66,7 @@ int	main ( void )
 		ScavTrap b("B");
 
 		std::cout << std::endl;
-		for (int i = 0; i < 11; i++)
+		for (int i = 0; i < 51; i++)
 			a.attack("B");
 		main_print_banner("After that, A try repair itself but should has not enough energy to repaired");
 		a.beRepaired(50);
@@ -80,7 +78,7 @@ int	main ( void )
 		ScavTrap b("B");
 
 		std::cout << std::endl;
-		a.beRepaired(50);
+		a.beRepaired(150);
 		std::cout << std::endl;
 	}
 	main_print_banner("This test check if possible to attack bot destroyed previously");
@@ -111,10 +109,19 @@ int	main ( void )
 		a.attack("A");
 		std::cout << std::endl;
 	}
+	main_print_banner("Test virtual method berepaired");
+	{
+		ClapTrap *a = new ScavTrap("A");
+		ScavTrap b("B");
+		std::cout << std::endl;
+		a->beRepaired(150);
+		std::cout << std::endl;
+		b.attack("A");
+		a->beRepaired(150);
+		std::cout << std::endl;
 
-
-
-
+		delete a;
+	}
 }
 
 void	main_print_banner(std::string title)
