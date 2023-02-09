@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:21:52 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 16:14:19 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:38:08 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,17 @@ public:
 
 	void	guardGate( void );	
 
+	static const unsigned int	hit_max = 100;
+	static const unsigned int	energy_max = 50;
+	static const unsigned int	damage_default = 20;	
+
 
 private:
 	
 	ScavTrap ( void );
 
-	static const unsigned int	hit_max = 100;
-	static const unsigned int	energy_max = 50;
-	static const unsigned int	damage_default = 20;	
+	bool	_isGuard;
 
-	
 	
 };
 #endif /* __SCAVTRAP_H__ */

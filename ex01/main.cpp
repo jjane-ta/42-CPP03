@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 16:31:30 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:37:12 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,13 @@ int	main ( void )
 	
 		std::cout << std::endl;
 		a.attack("A");
+		std::cout << std::endl;
+	}
+	main_print_banner("Test guardGate");
+	{
+		ScavTrap a("A");
+		std::cout << std::endl;
+		a.guardGate();
 		std::cout << std::endl;
 	}
 	main_print_banner("Test virtual method berepaired");

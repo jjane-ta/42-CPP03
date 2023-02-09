@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 16:35:37 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:42:22 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 const std::string ScavTrap::scavtrap_color = "\033[0;31m";
 const std::string ScavTrap::scavtrap_reset_color = "\033[0m";
+
+
 
 ScavTrap::ScavTrap ( void ) : ClapTrap()
 {
@@ -32,7 +34,7 @@ ScavTrap::ScavTrap (const ScavTrap &scavtrap) : ClapTrap(scavtrap)
 	_hit_points = ScavTrap::hit_max;
 	_energy_points = ScavTrap::energy_max;
 	_attack_damage = ScavTrap::damage_default;
-
+	_isGuard = scavtrap._isGuard;
 
 	std::cout << scavtrap_color;
 	std::cout << "Copy ScavTrap " << this->_name << " say hello!!" << std::endl;
@@ -42,6 +44,7 @@ ScavTrap::ScavTrap (const ScavTrap &scavtrap) : ClapTrap(scavtrap)
 ScavTrap & ScavTrap::operator = (const ScavTrap &scavtrap)
 {
 	this->ClapTrap::operator = (scavtrap);
+	_isGuard = scavtrap._isGuard;
 	std::cout << scavtrap_color;
 	std::cout << "ScavTrap " << this->_name << " now is a copy of ScavTrap " << scavtrap._name << std::endl;
 	std::cout << scavtrap_reset_color;
@@ -53,6 +56,7 @@ ScavTrap::ScavTrap (const std::string & name ) : ClapTrap(name)
 	_hit_points = ScavTrap::hit_max;
 	_energy_points = ScavTrap::energy_max;
 	_attack_damage = ScavTrap::damage_default;
+	_isGuard = false;
 
 	std::cout << scavtrap_color;
 	std::cout << "ScavTrap " << this->_name << " say hello!!" << std::endl;
@@ -103,6 +107,8 @@ void	ScavTrap::beRepaired(unsigned int amount)
 
 void	ScavTrap::guardGate( void )
 {
+	this->_isGuard = true;	
+
 	std::cout << scavtrap_color;
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode" << std::endl;
 	std::cout << scavtrap_reset_color;
