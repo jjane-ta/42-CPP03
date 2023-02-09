@@ -6,13 +6,13 @@
 #    By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 12:46:18 by jjane-ta          #+#    #+#              #
-#    Updated: 2023/02/09 18:20:59 by jjane-ta         ###   ########.fr        #
+#    Updated: 2023/02/09 18:58:41 by jjane-ta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test_ScavTrap
+NAME = test_FragTrap
 
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 DEP = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
