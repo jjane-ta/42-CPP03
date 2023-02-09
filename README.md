@@ -22,15 +22,23 @@ ClapTrap class:
 - Out of Subject : The next and prev attributes are implemented to store all instances of this Class that are created and thus make it possible to find the target by name.
 
 ## Ex01
-ScavTrap class: This clas is derived of ClapTrap base class
+ScavTrap class: This clas is derived of ClapTrap base class.
+  - Printed in RED.
   - The constructors call the base class's constructors before updating the class values and printing their own messages.
   - The functions attack and takeDamage call the function of the base clas.
   - The function beRepaired override base class function.
   - New var _isGuard is setted true when ScavTrap::guarGate member function is called.
  
  ClapTrap class: Updated
+  - Printed in WHITE
   - Now default destructor is virtual.
   - Now default constructor and some private vars are protected.
   - Now beRepaired function is virtual.
+  
+  ## Ex02
+  FrapTrap class: This is a derived class of ClapTrap, this class is almost identical to the ScavTrap.
+  - Printed in PURPLE
+  - Some static values of the class are changed.
+  - New var FragTrap::highFivesGuys() member function is implemented.
   
   
