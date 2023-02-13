@@ -6,21 +6,25 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/13 16:26:51 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:05:06 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+int	ClapTrap::instances = 0;
+
 ClapTrap *ClapTrap::bot_list = nullptr;
 
 ClapTrap::ClapTrap ( void )
 {
+	instances++;
 	std::cout << "ClapTrap basic private constructor should never caled!!" << std::endl;
 } 
 
 ClapTrap::~ClapTrap ( void )
 {
+	instances--;
 	if (!this->_next && !this->_prev)
 		bot_list = nullptr;
 	else if (!this->_prev)
@@ -47,6 +51,7 @@ ClapTrap::ClapTrap ( const std::string & name ) :
 	_next(nullptr),
 	_prev(nullptr)
 {
+	instances++;
 	if (bot_list)
 	{
 		this->_next = bot_list;	
@@ -62,8 +67,12 @@ ClapTrap::ClapTrap (const ClapTrap &claptrap) :
 	_name(claptrap._name),
 	_hit_points(claptrap._hit_points),
 	_energy_points(claptrap._energy_points),
-	_attack_damage(claptrap._attack_damage)
-{ 
+	_attack_damage(claptrap._attack_damage),
+	_next(nullptr),
+	_prev(nullptr)
+
+{
+	instances++; 
 	if (bot_list)
 	{
 		this->_next = bot_list;	
@@ -78,7 +87,6 @@ ClapTrap::ClapTrap (const ClapTrap &claptrap) :
 ClapTrap & ClapTrap::operator = (const ClapTrap & claptrap) 
 {
 	std::cout << "ClapTrap " << this->_name << " now is a copy of ClapTrap " << claptrap._name << std::endl;
-	//_name = claptrap._name;
 	_hit_points = claptrap._hit_points;
 	_energy_points = claptrap._energy_points;
 	_attack_damage = claptrap._attack_damage;

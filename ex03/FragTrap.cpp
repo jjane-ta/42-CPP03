@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/13 16:12:09 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:39:05 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ void FragTrap::highFivesGuys(void)
 
 void	FragTrap::print( void )
 {
+	ClapTrap::print();
 	std::cout << fragtrap_color;
 	std::cout << "FragTrap info:\n"\
 		<< "\t NOT Own vars.\n"; 

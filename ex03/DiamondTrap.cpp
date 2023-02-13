@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/13 16:37:45 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:05:23 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap ( void ) : ClapTrap(), ScavTrap(), FragTrap()
 	std::cout << "DiamondTrap basic private constructor should never caled!!" << std::endl;
 }
 */
-DiamondTrap::~DiamondTrap ( void )
+DiamondTrap::~DiamondTrap ( void ) 
 {
 	std::cout << diamondtrap_color;
 	std::cout << "DiamondTrap " << this->_name << " destroyed!!" << std::endl;
@@ -44,7 +44,7 @@ DiamondTrap::DiamondTrap (const DiamondTrap &diamondtrap) :
 
 DiamondTrap & DiamondTrap::operator = (const DiamondTrap & diamondtrap)
 {
-	this->ScavTrap::operator = (diamondtrap);
+ 	this->ScavTrap::operator = (diamondtrap);
 	this->FragTrap::operator = (diamondtrap);
 	std::cout << diamondtrap_color;
 	std::cout << "DiamondTrap " << this->_name << " now is a copy of DiamondTrap " << diamondtrap._name << std::endl;
@@ -119,7 +119,7 @@ void	DiamondTrap::whoAmI( void )
 
 void DiamondTrap::print ( void )
 {
-	ClapTrap::print();
+
 	ScavTrap::print();
 	FragTrap::print();
 	std::cout << diamondtrap_color;

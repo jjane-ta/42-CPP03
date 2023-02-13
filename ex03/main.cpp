@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/13 16:22:52 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:12:55 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main ( void )
 		a.attack("A_clap_name");
 		std::cout << std::endl;
 	}
+
 	main_print_banner("A attack and other namesake");
 	{
 		DiamondTrap a("A");
@@ -49,6 +50,7 @@ int	main ( void )
 		a.attack("_clap_name");
 		std::cout << std::endl;
 	}
+
 	main_print_banner("A take amount of damage greater than your health points and with zero health points try attack B");
 	{
 		DiamondTrap a("A");
@@ -71,6 +73,7 @@ int	main ( void )
 		a.beRepaired(50);
 		std::cout << std::endl;
 	}
+
 	main_print_banner("A try repair more than max health");
 	{
 		DiamondTrap a("A");
@@ -88,39 +91,6 @@ int	main ( void )
 		DiamondTrap("B").attack("A_clap_name");
 		std::cout << std::endl;
 		a.attack("B_clap_name");
-		std::cout << std::endl;
-	}
-	main_print_banner("Check copy constructor");
-	{
-		DiamondTrap a("A");
-		a.guardGate();
-		DiamondTrap b(a);
-
-		std::cout << std::endl;
-		a.print();
-		b.print();
-		std::cout << std::endl;
-		a.attack("A_clap_name");
-		a.print();
-		b.print();
-		std::cout << std::endl;
-	}
-	main_print_banner("Check copy operator");
-	{
-		DiamondTrap a("A");
-		a.guardGate();
-		DiamondTrap b("B");
-
-		b  = a;
-		
-		std::cout << std::endl;
-		a.print();
-		b.print();
-		std::cout << std::endl;
-		a.attack("A_clap_name");
-		std::cout << std::endl;
-		a.print();
-		b.print();
 		std::cout << std::endl;
 	}
 	main_print_banner("Test guardGate");
@@ -177,7 +147,11 @@ int	main ( void )
 		a.print();
 		b.print();
 		std::cout << std::endl;
+		
+		std::cout << "instances ClapTrap = " << ClapTrap::instances << std::endl;
+
 	}
+
 	main_print_banner("Check copy operator");
 	{
 
@@ -191,10 +165,16 @@ int	main ( void )
 		b.print();
 		std::cout << std::endl;
 		a.attack("A_clap_name");
+		a.attack("B_clap_name");
 		std::cout << std::endl;
 		a.print();
 		b.print();
 		std::cout << std::endl;
+
+
+		std::cout << "instances ClapTrap = " << ClapTrap::instances << std::endl;
+
+		
 
 	}
 

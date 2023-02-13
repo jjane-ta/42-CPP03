@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/13 16:11:23 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:39:13 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ void	ScavTrap::guardGate( void )
 
 void	ScavTrap::print( void )
 {
+	ClapTrap::print();
 	std::cout << scavtrap_color;
 	std::cout << "ScavTrap info:\n"\
 		<< "\tis_guard		=> " << std::boolalpha << _isGuard << std::endl; 
