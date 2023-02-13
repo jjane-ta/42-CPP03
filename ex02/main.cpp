@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 18:46:11 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:50:36 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,11 @@ int	main ( void )
 	main_print_banner("Chek copy operator");
 	{
 		FragTrap a("A");
-		FragTrap b  = a;
+		FragTrap b("B");
+		b  = a;
 	
 		std::cout << std::endl;
-		a.attack("A");
+		a.attack("B");
 		std::cout << std::endl;
 	}
 	main_print_banner("Test highFivesGuys()");

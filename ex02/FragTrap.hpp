@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:21:52 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 18:38:40 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:40:08 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ public:
 private:
 	
 	FragTrap ( void );
-
-	bool	_isGuard;
-
 	
 };
 #endif /* __FRAGTRAP_H__ */

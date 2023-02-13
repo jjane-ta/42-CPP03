@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:53:56 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 17:55:14 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:41:34 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ public:
 protected:
 
 	ClapTrap ( void );
-	std::string		_name;
+	const std::string		_name;
 	unsigned int	_hit_points;
 	unsigned int	_energy_points;
 	unsigned int	_attack_damage;

@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 17:42:22 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:17:26 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 const std::string ScavTrap::scavtrap_color = "\033[0;31m";
 const std::string ScavTrap::scavtrap_reset_color = "\033[0m";
-
-
 
 ScavTrap::ScavTrap ( void ) : ClapTrap()
 {
@@ -87,7 +85,7 @@ void	ScavTrap::beRepaired(unsigned int amount)
 	if (!this->_energy_points)
 	{
 		std::cout << scavtrap_color;
-		std::cout << "ClapTrap " << this->_name << " can't repaired with zero energy points.\n";
+		std::cout << "ScavTrap " << this->_name << " can't repaired with zero energy points.\n";
 		std::cout << scavtrap_reset_color;
 	}
 	else
