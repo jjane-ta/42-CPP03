@@ -6,7 +6,7 @@
 #    By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 12:46:18 by jjane-ta          #+#    #+#              #
-#    Updated: 2023/02/09 19:34:25 by jjane-ta         ###   ########.fr        #
+#    Updated: 2023/02/13 16:38:27 by jjane-ta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 DEP = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-CXX = c++ -pedantic -std=c++98 
+CXX = c++ -pedantic -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror -MMD -MP
 
-.%.o : %.cpp
+.%.o : %.cpp Makefile
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)

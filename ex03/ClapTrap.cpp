@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:25:07 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 16:24:21 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:26:51 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ ClapTrap::ClapTrap (const ClapTrap &claptrap) :
 ClapTrap & ClapTrap::operator = (const ClapTrap & claptrap) 
 {
 	std::cout << "ClapTrap " << this->_name << " now is a copy of ClapTrap " << claptrap._name << std::endl;
-	_name = claptrap._name;
+	//_name = claptrap._name;
 	_hit_points = claptrap._hit_points;
 	_energy_points = claptrap._energy_points;
 	_attack_damage = claptrap._attack_damage;
@@ -157,4 +157,13 @@ ClapTrap	*ClapTrap::get_ClapTrap_instanceByName(const std::string & name)
 		bot = bot->_next;
 	}
 	return (bot);
+}
+
+void	ClapTrap::print( void )
+{
+	std::cout << "ClapTrap info:"\
+		<< "\n\tname		=> " << _name\
+		<< "\n\tHit		=> " << _hit_points\
+		<< "\n\tEnergy	=> " << _energy_points\
+		<< "\n\tAttack	=> " << _attack_damage << std::endl;	
 }

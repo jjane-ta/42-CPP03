@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:32:13 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 18:41:39 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:12:09 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ FragTrap::FragTrap (const FragTrap &fragtrap) : ClapTrap(fragtrap)
 	_hit_points = FragTrap::hit_max;
 	_energy_points = FragTrap::energy_max;
 	_attack_damage = FragTrap::damage_default;
-	_isGuard = fragtrap._isGuard;
 
 	std::cout << fragtrap_color;
 	std::cout << "Copy FragTrap " << this->_name << " say hello!!" << std::endl;
@@ -43,7 +42,6 @@ FragTrap::FragTrap (const FragTrap &fragtrap) : ClapTrap(fragtrap)
 FragTrap & FragTrap::operator = (const FragTrap &fragtrap)
 {
 	this->ClapTrap::operator = (fragtrap);
-	_isGuard = fragtrap._isGuard;
 	std::cout << fragtrap_color;
 	std::cout << "FragTrap " << this->_name << " now is a copy of FragTrap " << fragtrap._name << std::endl;
 	std::cout << fragtrap_reset_color;
@@ -55,7 +53,6 @@ FragTrap::FragTrap (const std::string & name ) : ClapTrap(name)
 	_hit_points = FragTrap::hit_max;
 	_energy_points = FragTrap::energy_max;
 	_attack_damage = FragTrap::damage_default;
-	_isGuard = false;
 
 	std::cout << fragtrap_color;
 	std::cout << "FragTrap " << this->_name << " say hello!!" << std::endl;
@@ -86,7 +83,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 	if (!this->_energy_points)
 	{
 		std::cout << fragtrap_color;
-		std::cout << "ClapTrap " << this->_name << " can't repaired with zero energy points.\n";
+		std::cout << "FragTrap " << this->_name << " can't repaired with zero energy points.\n";
 		std::cout << fragtrap_reset_color;
 	}
 	else
@@ -108,5 +105,13 @@ void FragTrap::highFivesGuys(void)
 {
 	std::cout << fragtrap_color;
 	std::cout << "FragTrap " << this->_name << " say : Give me five guys!!" << std::endl;
+	std::cout << fragtrap_reset_color;
+}
+
+void	FragTrap::print( void )
+{
+	std::cout << fragtrap_color;
+	std::cout << "FragTrap info:\n"\
+		<< "\t NOT Own vars.\n"; 
 	std::cout << fragtrap_reset_color;
 }
