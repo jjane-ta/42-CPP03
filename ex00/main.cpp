@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/07 19:21:33 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:38:33 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main ( void )
 		ClapTrap b("B");
 
 		std::cout << std::endl;
-		a = b;
+		b = a;
 		std::cout << std::endl;
 		a.attack("B");
 		std::cout << std::endl;

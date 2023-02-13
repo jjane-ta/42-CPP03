@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/09 17:37:12 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/13 19:33:49 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,8 @@ int	main ( void )
 	main_print_banner("Chek copy operator");
 	{
 		ScavTrap a("A");
-		ScavTrap b  = a;
+		ScavTrap b("B");
+		b  = a;
 	
 		std::cout << std::endl;
 		a.attack("A");
