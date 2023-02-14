@@ -35,10 +35,24 @@ ScavTrap class: This clas is derived of ClapTrap base class.
   - Now default constructor and some private vars are protected.
   - Now beRepaired function is virtual.
   
-  ## Ex02
+## Ex02
   FrapTrap class: This is a derived class of ClapTrap, this class is almost identical to the ScavTrap.
   - Printed in PURPLE
   - Some static values of the class are changed.
   - New var FragTrap::highFivesGuys() member function is implemented.
+  
+## Ex03
+DiamondTrap Class: Multiple inheritance
+  - Printed in GREEN
+  - The super class Claptrap subobject of the DiamondTrap is created once, and only once.
+  - This class has its own variable name.
+  - Inheritance:
+    - ClapTrap::name (parameter of the constructor + "_clap_name" suffix)
+    - Hit points (FragTrap)
+    - Energy points (ScavTrap)
+    - Attack damage (FragTrap)
+    - attack() (Scavtrap)
+  
+  
   
   
