@@ -1,4 +1,4 @@
-# 42-CPP03 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Developed on Platform MacOS](https://badgen.net/badge/Platform/macOS/grey?icon=default)](#) [![jjane-ta 42 Graded points](https://badgen.net/badge/Grade/100/green?icon=default)](#)
+# 42-CPP03 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) [![Developed on Platform MacOS](https://badgen.net/badge/Platform/macOS/grey?icon=default)](#) [![jjane-ta 42 Graded points](https://badgen.net/badge/Grade/100/green?icon=default)](#)
 
 
 ## Ex00
